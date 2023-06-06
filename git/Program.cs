@@ -6,8 +6,20 @@
     int b = int.Parse(Console.ReadLine());
     int resultado = a / b;
     Console.WriteLine("Resultado: " + resultado);
+} catch(DivideByZeroException ex)
+{
+    Console.WriteLine("Não é permitido dividir por zero. " + ex.Message);
+} catch(InvalidCastException ex)
+{
+    Console.WriteLine("Letras não são permitidas. " + ex.Message);
 } catch(Exception ex)
 {
-    Console.WriteLine("Algo deu errado!");
+    Console.WriteLine("Algo deu errado! " + ex.Message);
 }
+finally
+{
+    Console.WriteLine("Aqui passa de qualquer forma! ");
+}
+
+
 Console.ReadKey();
